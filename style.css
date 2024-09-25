@@ -5,11 +5,17 @@
   font-family: "Roboto", sans-serif;
 }
 
+header .inner {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 1360px;
+}
+
 .log {
   display: flex;
   justify-content: end;
   list-style: none;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 .log li a {
@@ -23,12 +29,19 @@
   margin: 10px;
 }
 
-.navbar-nav ul {
+.navbar {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-menu {
+  display: flex;
   list-style: none;
   padding: 10px;
-}
+  width: 1045px;
+  margin-left: 460px;
+} /*justify-content : end 빼니까 위로 올라감 어째서??????*/
 
 .nav-item {
   list-style: none;
@@ -38,4 +51,8 @@
 .nav-item a {
   text-decoration: none;
   color: black;
+}
+
+.brand {
+  width: 126px;
 }
