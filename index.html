@@ -11,6 +11,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="style.css" />
     <style>
       .card {
@@ -41,6 +45,12 @@
         margin-bottom: 14px;
         border-radius: 4px;
       }
+      .swiper-container {overflow: visible;}
+.swiper-slide {opacity:0.4; transition:opacity 0.3s;}
+.swiper-slide-active,
+.swiper-slide-active + .swiper-slide,
+.swiper-slide-active + .swiper-slide + .swiper-slide,
+.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide {opacity:1}
     </style>
   </head>
   <body>
@@ -49,6 +59,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <header>
       <div class="inner">
         <div class="log area">
@@ -301,6 +312,50 @@
     <!-- 방영 중 프로그램 시작 -->
     <section id="content" class="container mx-auto mt-5">
       <span class="h2" style="font-weight: bold">방영 중 프로그램</span>
+
+      
+      <h2>슬라이더1</h2>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+var mySwiper = new Swiper('.swiper-container', {
+  slidesPerView: 4,
+  slidesPerGroup: 4,
+  observer: true,
+  observeParents: true,
+  spaceBetween: 24,
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+      1280: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+      },
+      720: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+      }
+  }
+});
+
+});
+    </script>
     </section>
   </body>
 </html>
