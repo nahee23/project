@@ -11,15 +11,25 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
     <link rel="stylesheet" href="style.css" />
     <style>
+      .carousel-inner {
+        height: 500px;
+      }
+
+      .c-item {
+        height: 500px;
+      }
+
+      .c-img {
+        height: 100%;
+        object-fit: cover;
+      }
+
       .card {
         width: 300px;
       }
+
       .img {
         list-style: none;
       }
@@ -32,7 +42,7 @@
 
       .gallery .images {
         gap: 15px;
-        margin: 50px 0;
+        
         columns: 4 300px;
         list-style: none;
       }
@@ -45,12 +55,53 @@
         margin-bottom: 14px;
         border-radius: 4px;
       }
-      .swiper-container {overflow: visible;}
-.swiper-slide {opacity:0.4; transition:opacity 0.3s;}
-.swiper-slide-active,
-.swiper-slide-active + .swiper-slide,
-.swiper-slide-active + .swiper-slide + .swiper-slide,
-.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide {opacity:1}
+
+      .gallery .images li span {
+        color: #aaaaaa;
+      }
+
+      .gallery .images li:hover,
+      .images li .card-body:hover {
+        color: black;
+        font-weight: bold;
+      }
+
+      .pro .card {
+        width: 200px;
+        border-style: none;
+      }
+      .pro .col {
+        width: 220px;
+      }
+
+      .pro .card img {
+        border-radius: 10px;
+      }
+
+      .card-text {
+        color: #aaaaaa;
+        font-size: 15px;
+      }
+      .bg{
+        min-width: 1360px; margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .footer_link-wrap{
+        list-style: none;
+      }
+
+      .link_item{
+        margin: 10px;
+      }
+
     </style>
   </head>
   <body>
@@ -59,13 +110,13 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- 헤더 시작 -->
     <header>
       <div class="inner">
         <div class="log area">
           <ul class="log">
             <li>
-              <a href="#"><span>로그인</span></a>
+              <a href="login.html"><span>로그인</span></a>
             </li>
             <li>
               <a href="#"><span>회원가입</span></a>
@@ -75,45 +126,226 @@
             </li>
           </ul>
         </div>
-
-        <nav class="navbar">
+        <nav class="navbar navbar-expand-lg">
           <div class="brand">
             <i
               ><a href="#" class="navbar-brand"
                 ><img src="image/tvn_logo_230313.png" alt="" /></a
             ></i>
           </div>
-
           <ul class="navbar-menu">
             <li class="nav-item"><a href="#">About tvN</a></li>
             <li class="nav-item"><a href="#">편성표</a></li>
             <li class="nav-item"><a href="#">채널번호</a></li>
-            <li class="nav-item"><a href="#">드라마</a></li>
-            <li class="nav-item"><a href="#">연예오락</a></li>
-            <li class="nav-item"><a href="#">인사이트</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">드라마</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a href="#" class="dropdown-item">[예정]정년이</a></li>
+                <li><a href="#" class="dropdown-item">[예정]가석방 심사관 이한신</a></li>
+                <li><a href="#" class="dropdown-item">[월화]손해 보기 싫어서</a></li>
+                <li><a href="#" class="dropdown-item">[토일]엄마친구아들</a></li>
+                <li><a href="#" class="dropdown-item">O'PENing2024</a></li>
+                <li><a href="#" class="dropdown-item">[종영]우연일까?</a></li>
+                <li><a href="#" class="dropdown-item">[종영]감사합니다</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">연예오락</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a href="#" class="dropdown-item">[예정]문과vs이과,놀라운 증명</a></li>
+                <li><a href="#" class="dropdown-item">[화]벌거벗은 세계사</a></li>
+                <li><a href="#" class="dropdown-item">[수]유퀴즈 온 더 블럭</a></li>
+                <li><a href="#" class="dropdown-item">[목]언니네 산지직송</a></li>
+                <li><a href="#" class="dropdown-item">[목]70억의 선택</a></li>
+                <li><a href="#" class="dropdown-item">[금]삼시세끼 Light</a></li>
+                <li><a href="#" class="dropdown-item">[금]프리한 닥터</a></li>
+                <li><a href="#" class="dropdown-item">[토]놀라운 토요일</a></li>
+                <li><a href="#" class="dropdown-item">[토]백패커2</a></li>
+              </ul></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">인사이트</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a href="#" class="dropdown-item">[화]김창옥쇼3</a></li>
+                <li><a href="#" class="dropdown-item">[종영]천 개의 눈</a></li>
+                <li><a href="#" class="dropdown-item">[종영]이 말을 꼭 하고 싶었어요</a></li>
+              </ul></li>
             <li class="nav-item"><a href="#">동영상</a></li>
             <li class="nav-item"><a href="#">이벤트</a></li>
             <li class="nav-item"><a href="#">프로그램</a></li>
           </ul>
         </nav>
       </div>
+      <div class="area-inner">
+        <ul class="multimenu">
+          <li><a class="item" href="#hero-carousel">tvN</a></li>
+          <li><a class="item" href="#">tvN STORY</a></li>
+          <li><a class="item" href="#">tvN DRAMA</a></li>
+          <li><a class="item" href="#">tvN SHOW</a></li>
+          <li><a class="item" href="#">tvN SPORTS</a></li>
+        </ul>
+      </div>
     </header>
-
+    <!-- 헤더 끝 -->
+    <!-- 캐로셀 시작  -->
+    <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="6"
+          aria-label="Slide 7"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="7"
+          aria-label="Slide 8"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#hero-carousel"
+          data-bs-slide-to="8"
+          aria-label="Slide 9"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+          <img
+            src="image/banner1.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 1"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner2.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 2"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner3.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 3"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner4.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 4"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner5.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 5"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner6.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 6"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner7.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 7"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner8.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 8"
+          />
+        </div>
+        <div class="carousel-item c-item">
+          <img
+            src="image/banner9.jpg"
+            class="d-block w-100 c-img"
+            alt="Slide 9"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#hero-carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">이전</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#hero-carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">다음</span>
+      </button>
+    </section>
+    <!-- 캐로셀 섹션 끝 -->
     <!-- 최신 컨텐츠 시작 -->
     <section id="content" class="container mx-auto mt-5">
       <span class="h2" style="font-weight: bold">최신 컨텐츠</span>
-      <div class="gallery">
+      <div class="gallery mt-4">
         <ul class="images">
-          <li class="img">
+          <li class="img mb-4">
             <div class="card">
               <img src="image/card1.jpg" alt="img" />
               <div class="card-body p-3">
                 <span
                   class="card-title"
-                  style="color: #aaaaaa; font-size: 17px; font-weight: bold"
+                  style="font-size: 17px; font-weight: bold"
                   >현장포토</span
                 >
-                <span style="color: #aaaaaa">| 정년이 </span>
+                <span>| 정년이 </span>
                 <div>
                   <i
                     style="
@@ -129,16 +361,16 @@
             </div>
           </li>
 
-          <li class="img"></li>
+          <li class="img mb-4">
             <div class="card">
               <img src="image/card2.jpg" alt="img" />
               <div class="card-body p-3">
                 <span
                   class="card-title"
-                  style="color: #aaaaaa; font-size: 17px; font-weight: bold"
+                  style="font-size: 17px; font-weight: bold"
                   >현장포토</span
                 >
-                <span style="color: #aaaaaa">| 손해 보기 싫어서 </span>
+                <span>| 손해 보기 싫어서 </span>
                 <div>
                   <i
                     style="
@@ -154,16 +386,16 @@
             </div>
           </li>
 
-          <li class="img">
+          <li class="img mb-4">
             <div class="card">
               <img src="image/card3.jpg" alt="img" />
               <div class="card-body p-3">
                 <span
                   class="card-title"
-                  style="color: #aaaaaa; font-size: 17px; font-weight: bold"
+                  style="font-size: 17px; font-weight: bold"
                   >대표이미지</span
                 >
-                <span style="color: #aaaaaa">| 정년이 </span>
+                <span>| 정년이 </span>
                 <div>
                   <i
                     style="
@@ -179,14 +411,12 @@
             </div>
           </li>
 
-          <li class="img">
+          <li class="img mb-4">
             <div class="card">
               <img src="image/card4.jpg" alt="img" />
               <div class="card-body p-3">
-                <span class="card-title" style="color: #aaaaaa; font-size: 17px"
-                  >현장포토</span
-                >
-                <span style="color: #aaaaaa">| 정년이 </span>
+                <span class="card-title" style="font-size: 17px">현장포토</span>
+                <span>| 정년이 </span>
                 <div>
                   <i
                     style="
@@ -201,14 +431,14 @@
               </div>
             </div>
           </li>
-          <li class="img">
+          <li class="img mb-4">
             <div class="card p-3">
               <span
                 class="card-title"
-                style="color: #aaaaaa; font-size: 17px; font-weight: bold"
+                style="font-size: 17px; font-weight: bold"
                 >미리보기</span
               >
-              <span style="color: #aaaaaa">| 엄마친구아들</span>
+              <span>| 엄마친구아들</span>
               <div>
                 <i
                   style="
@@ -229,14 +459,12 @@
             </div>
           </li>
 
-          <li class="img">
+          <li class="img mb-4">
             <div class="card">
               <img src="image/card6.jpg" alt="img" />
               <div class="card-body p-3">
-                <span class="card-title" style="color: #aaaaaa; font-size: 17px"
-                  >현장포토</span
-                >
-                <span style="color: #aaaaaa">| 엄마친구아들 </span>
+                <span class="card-title" style="font-size: 17px">현장포토</span>
+                <span>| 엄마친구아들 </span>
                 <div>
                   <i
                     style="
@@ -252,16 +480,16 @@
             </div>
           </li>
 
-          <li class="img">
+          <li class="img mb-4">
             <div class="card">
               <img src="image/card5.jpg" alt="img" />
               <div class="card-body p-3">
                 <span
                   class="card-title"
-                  style="color: #aaaaaa; font-size: 17px; font-weight: bold"
+                  style="font-size: 17px; font-weight: bold"
                   >대표이미지</span
                 >
-                <span style="color: #aaaaaa">| 엄마친구아들 </span>
+                <span>| 엄마친구아들 </span>
                 <div>
                   <i
                     style="
@@ -271,19 +499,19 @@
                     "
                     >NEW</i
                   >
-                  🩷승효X석류 로맨스 포스터💙
+                  🧡승효X석류 로맨스 포스터💙
                 </div>
               </div>
             </div>
           </li>
-          <li class="img">
+          <li class="img mb-4">
             <div class="card p-3">
               <span
                 class="card-title"
-                style="color: #aaaaaa; font-size: 17px; font-weight: bold"
+                style="font-size: 17px; font-weight: bold"
                 >미리보기</span
               >
-              <span style="color: #aaaaaa">| 손해 보기 싫어서</span>
+              <span>| 손해 보기 싫어서</span>
               <div>
                 <i
                   style="
@@ -310,52 +538,137 @@
     <!-- 최신 컨텐츠 끝 -->
 
     <!-- 방영 중 프로그램 시작 -->
-    <section id="content" class="container mx-auto mt-5">
+    <section id="content" class="container mx-auto mt-5 mb-5">
       <span class="h2" style="font-weight: bold">방영 중 프로그램</span>
 
-      
-      <h2>슬라이더1</h2>
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="image/card1.jpg" alt=""></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-
-var mySwiper = new Swiper('.swiper-container', {
-  slidesPerView: 4,
-  slidesPerGroup: 4,
-  observer: true,
-  observeParents: true,
-  spaceBetween: 24,
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-      1280: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-      },
-      720: {
-          slidesPerView: 1,
-          slidesPerGroup: 1,
-      }
-  }
-});
-
-});
-    </script>
+      <div class="pro row row-cols-1 row-cols-md-2 g-4 mt-2">
+        <div class="col">
+          <div class="card">
+            <img src="image/gallery1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body mt-3">
+              <h5 class="card-title">70억의 선택</h5>
+              <p class="card-text">매주 [목] 오전9:00 방송</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="image/gallery2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body mt-3">
+              <h5 class="card-title">프리한 닥터</h5>
+              <p class="card-text">매주 [금] 오전9:00 방송</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="image/gallery3.jpg" class="card-img-top" alt="..." />
+            <div class="card-body mt-3">
+              <h5 class="card-title">벌거벗은 세계사</h5>
+              <p class="card-text">매주 [화] 저녁10:10 방송</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="image/gallery4.jpg" class="card-img-top" alt="..." />
+            <div class="card-body mt-3">
+              <h5 class="card-title">유퀴즈 온 더 블럭</h5>
+              <p class="card-text">매주 [수] 저녁8:45 방송</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="image/gallery5.jpg" class="card-img-top" alt="..." />
+            <div class="card-body mt-3">
+              <h5 class="card-title">놀라운 토요일</h5>
+              <p class="card-text">매주 [토] 저녁7:40 방송</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="image/gallery6.jpg" class="card-img-top" alt="..." />
+            <div class="card-body mt-3">
+              <h5 class="card-title">코미디빅리그</h5>
+              <p class="card-text">방송 휴지기</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <!-- 방영 중 프로그램 끝 -->
+
+    <!-- 진행 중 이벤트 시작 -->
+    <section id="event" class="container mx-auto mt-5 mb-5">
+      <span class="h2" style="font-weight: bold">진행 중 이벤트</span>
+
+      <div class="card mb-3 mt-4" style="max-width:1320px; width: 100%; height: 360px;">
+        <div class="row g-0">
+          <div class="col-md-4" style="width: 648px;">
+            <a href="#"><img
+              src="image/event1.png"
+              class="img-fluid rounded-start"
+              style="height: 360px; width: 648px;"
+              alt="..."
+            /></a>
+          </div>
+          <div class="col-md-8" style="width: 550px;">
+            <div class="card-body pt-5 ps-5" >
+              <a href="#" style="text-decoration: none; color: black;"><h5 class="card-title" style="font-weight: bold; font-size: 22px;">
+                [백패커2]극한의 출장 요리단이 직접 찾아갑니다!
+              </h5></a>
+              <p class="card-text pt-3">
+                기간 2024.05.07-2024.10.06 <br />
+                조회 67,986
+              </p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 티빙 섹션 시작 -->
+    <section class="imghtml-section mt-5 pt-5 mb-5 pb-5">
+      <div class="bg" style="background-color: rgb(252, 0, 55);">
+        <img src="image/tving.jpg" style="max-width: 1320px;  " alt="">
+    </div>
+    </section>
+    <!-- 티빙 섹션 끝 -->
+
+    <!-- 푸터 섹션 시작 -->
+     <section>
+      <footer>
+        <div class="container" style="border-top: 1px solid rgba(0, 0, 0, 0.06); padding-left: 55px; margin-bottom: 20px;
+        padding-top: 20px; 
+        background-color: rgb(255, 255, 255); "><a href="#"><small>HOME</small></a></div>
+       <div class="footer_add pt-3 pb-3">
+       <div class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.06);">
+        <ul class="footer_link-wrap d-flex ">
+          <li><a href="#" class="link_item"><small>회사소개</small></a></li>
+          <li><a href="#" class="link_item"><small>광고/제휴문의</small></a></li>
+          <li><a href="#" class="link_item"><small>개인정보 처리방침</small></a></li>
+          <li><a href="#" class="link_item"><small>청소년보호정책</small></a></li>
+          <li><a href="#" class="link_item"><small>법적고지</small></a></li>
+          <li><a href="#" class="link_item"><small>이메일무단수집거부</small></a></li>
+          <li><a href="#" class="link_item"><small>큐톤표</small></a></li>
+          <li><a href="#" class="link_item"><small>고객센터</small></a></li>
+          <li><a href="#" class="link_item"><small>공지사항</small></a></li>
+        </ul>
+        </div>
+        <div class="container mt-5 mb-3"><img src="image/tvn_logo_230313.png" alt=""></div>
+        <div class="container"><span class="ap"><small>시청자 상담실 (판정 문의 및 시청자 의견) :</span></small>
+        <span><small>080-080-0780</small></span><br>
+        <span class="ap"><small>(주)씨제이이엔엠 대표이사 : 윤상현 |</span></small>
+        <span><small>사업자정보확인</small></span><br>
+        <span class="ap"><small>본점 : (06761) 서울시 서초구 과천대로 870-13 | 사업장 : (03926) 서울시 마포구 상암산로 66 |
+          사업자 등록번호 : 106-81-51510 | 개인정보 보호책임자 : 김지훈
+        </span></small>
+      </div>
+      </div>
+      </footer>
+     </section>
   </body>
 </html>
